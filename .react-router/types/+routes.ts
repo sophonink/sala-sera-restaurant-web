@@ -14,20 +14,44 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/menu": {
+    params: {};
+  };
+  "/about": {
+    params: {};
+  };
+  "/reservation": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/";
+    page: "/" | "/menu" | "/about" | "/reservation";
   };
   "routes/home.tsx": {
     id: "routes/home";
     page: "/";
+  };
+  "routes/menu.tsx": {
+    id: "routes/menu";
+    page: "/menu";
+  };
+  "routes/about.tsx": {
+    id: "routes/about";
+    page: "/about";
+  };
+  "routes/reservation.tsx": {
+    id: "routes/reservation";
+    page: "/reservation";
   };
 };
 
 type RouteModules = {
   "root": typeof import("./src/app/root.tsx");
   "routes/home": typeof import("./src/app/routes/home.tsx");
+  "routes/menu": typeof import("./src/app/routes/menu.tsx");
+  "routes/about": typeof import("./src/app/routes/about.tsx");
+  "routes/reservation": typeof import("./src/app/routes/reservation.tsx");
 };
