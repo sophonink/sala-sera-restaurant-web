@@ -1,12 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "react-router";
-import AmbientBackground from "@/components/layout/AmbientBackground";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import ScrollToTop from "@/components/layout/ScrollToTop";
@@ -49,7 +42,6 @@ export default function App() {
       >
         ข้ามไปยังเนื้อหา
       </a>
-      <AmbientBackground />
       <ScrollToTop />
       <Navbar />
       <main id="main-content" tabIndex={-1} className="flex-1 outline-none">

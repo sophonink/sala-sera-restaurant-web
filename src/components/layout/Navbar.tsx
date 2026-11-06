@@ -104,70 +104,69 @@ export default function Navbar() {
         </nav>
       </div>
 
-      <div
-        className={cn(
-          "fixed inset-0 flex flex-col bg-night/90 backdrop-blur-2xl transition-all duration-500 lg:hidden",
-          open
-            ? "visible opacity-100"
-            : "invisible pointer-events-none opacity-0",
-        )}
-        aria-hidden={!open}
-      >
-        <div className="flex flex-1 flex-col justify-center px-7 pt-24 pb-10">
-          <p className="eyebrow mb-8">Sala Sera · Bangkok</p>
-          <div className="flex flex-col gap-1">
-            {navLinks.map((link, index) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === "/"}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  cn(
-                    "group flex items-baseline justify-between border-b border-white/10 py-4 transition-colors",
-                    isActive ? "text-gold" : "text-foreground/80",
-                  )
-                }
-                style={{ transitionDelay: open ? `${index * 40}ms` : "0ms" }}
-              >
-                <span className="font-display text-3xl sm:text-4xl">
-                  {link.label}
-                </span>
-                <span className="text-[0.6rem] tracking-[0.28em] text-muted-foreground uppercase">
-                  {link.labelEn}
-                </span>
-              </NavLink>
-            ))}
-          </div>
+      {open && (
+        <div
+          className={cn(
+            "fixed inset-0 flex flex-col bg-night/90 backdrop-blur-2xl lg:hidden animate-fade-in",
+          )}
+          aria-hidden={!open}
+        >
+          <div className="flex flex-1 flex-col justify-center px-7 pt-24 pb-10">
+            <p className="eyebrow mb-8">Sala Sera · Bangkok</p>
+            <div className="flex flex-col gap-1">
+              {navLinks.map((link, index) => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.to === "/"}
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    cn(
+                      "group flex items-baseline justify-between border-b border-white/10 py-4 transition-colors",
+                      isActive ? "text-gold" : "text-foreground/80",
+                    )
+                  }
+                  style={{ transitionDelay: open ? `${index * 40}ms` : "0ms" }}
+                >
+                  <span className="font-display text-3xl sm:text-4xl">
+                    {link.label}
+                  </span>
+                  <span className="text-[0.6rem] tracking-[0.28em] text-muted-foreground uppercase">
+                    {link.labelEn}
+                  </span>
+                </NavLink>
+              ))}
+            </div>
 
-          <div className="mt-10 flex flex-col gap-4">
-            <LinkButton
-              to="/reservation"
-              variant="gold"
-              size="pill"
-              className="w-full"
-              onClick={() => setOpen(false)}
-            >
-              จองโต๊ะ
-              <ArrowUpRight className="size-4" />
-            </LinkButton>
-            <div className="flex flex-col gap-1 text-xs text-muted-foreground">
-              <a
-                href={site.phoneHref}
-                className="transition-colors hover:text-gold"
+            <div className="mt-10 flex flex-col gap-4">
+              <LinkButton
+                to="/reservation"
+                variant="gold"
+                size="pill"
+                className="w-full"
+                onClick={() => setOpen(false)}
               >
-                {site.phone}
-              </a>
-              <a
-                href={`mailto:${site.email}`}
-                className="transition-colors hover:text-gold"
-              >
-                {site.email}
-              </a>
+                จองโต๊ะ
+                <ArrowUpRight className="size-4" />
+              </LinkButton>
+              <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+                <a
+                  href={site.phoneHref}
+                  className="transition-colors hover:text-gold"
+                >
+                  {site.phone}
+                </a>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="transition-colors hover:text-gold"
+                >
+                  {site.email}
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }

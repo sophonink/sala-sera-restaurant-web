@@ -24,7 +24,7 @@ export default function PageHeader({
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
       <div className="section-shell relative">
         <p className="eyebrow animate-fade-up">{eyebrow}</p>
-        <h1 className="animate-fade-up mt-5 max-w-4xl text-4xl leading-[1.2] text-foreground [animation-delay:120ms] sm:text-6xl lg:text-7xl">
+        <h1 className="animate-fade-up mt-5 max-w-4xl text-4xl text-foreground [animation-delay:120ms] sm:text-6xl lg:text-7xl">
           {title}
         </h1>
         {description ? (
