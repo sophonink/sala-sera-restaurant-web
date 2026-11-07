@@ -8,7 +8,6 @@ export default function Footer() {
   return (
     <footer className="relative mt-24 overflow-hidden border-t border-white/10">
       <StarField className="opacity-30" />
-      <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[360px] w-[600px] -translate-x-1/2 rounded-full bg-gold/10 blur-[120px]" />
       <div className="section-shell relative py-14 sm:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_0.7fr_1.1fr_1fr]">
           <div>
