@@ -204,6 +204,7 @@
   }
 
   .glass {
+    @apply backdrop-blur-[22px] backdrop-saturate-[140%];
     background:
       linear-gradient(
         145deg,
@@ -212,14 +213,13 @@
         rgb(232 201 135 / 0.035) 100%
       );
     border: 1px solid rgb(255 255 255 / 0.1);
-    backdrop-filter: blur(22px) saturate(140%);
-    -webkit-backdrop-filter: blur(22px) saturate(140%);
     box-shadow:
       inset 0 1px 0 0 rgb(255 255 255 / 0.09),
       0 28px 70px -35px rgb(0 0 0 / 0.85);
   }
 
   .glass-soft {
+    @apply backdrop-blur-[16px] backdrop-saturate-[130%];
     background:
       linear-gradient(
         160deg,
@@ -227,12 +227,11 @@
         rgb(255 255 255 / 0.015) 100%
       );
     border: 1px solid rgb(255 255 255 / 0.07);
-    backdrop-filter: blur(16px) saturate(130%);
-    -webkit-backdrop-filter: blur(16px) saturate(130%);
     box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.06);
   }
 
   .glass-gold {
+    @apply backdrop-blur-[22px] backdrop-saturate-[150%];
     background:
       linear-gradient(
         150deg,
@@ -241,8 +240,6 @@
         rgb(232 201 135 / 0.06) 100%
       );
     border: 1px solid color-mix(in oklch, var(--gold) 32%, transparent);
-    backdrop-filter: blur(22px) saturate(150%);
-    -webkit-backdrop-filter: blur(22px) saturate(150%);
     box-shadow:
       inset 0 1px 0 0 rgb(255 240 200 / 0.16),
       0 30px 80px -40px rgb(0 0 0 / 0.9),
