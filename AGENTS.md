@@ -28,5 +28,5 @@
 - `cn` comes from the `cn` npm package; `src/lib/utils.ts` re-exports it for shadcn compatibility. Existing `Button.tsx` imports `cn` directly from `"cn"`, is a **default export**, and wraps `@base-ui/react/button` — match that pattern for new components.
 - `.react-router/types/**` is generated **and committed**. Never hand-edit it; regenerate with `npm run typegen`.
 - `npm run lint` is currently not green: ESLint only ignores `dist`, so it reports errors inside generated `.react-router/types`, plus `no-empty-pattern`/`react-refresh` errors in the template's `meta({ }: Route.MetaArgs)` route. Lint targeted files (`npx eslint src/app/routes/<file>.tsx`) rather than treating the repo-wide script as a clean gate.
-- `npm run build` writes to `build/`, which is **not** in `.gitignore`; do not commit it. The existing `dist/` directory is stale output from the pre-React-Router Vite template and is ignored.
-- `README.md` is the default Vite template and does not describe this app. Trust `package.json`, `react-router.config.ts`, and `components.json` over it.
+- `npm run build` writes to `build/`, which `.gitignore` excludes. The existing `dist/` directory is stale output from the pre-React-Router Vite template and is also ignored.
+- `README.md` provides the app overview; use `package.json`, `react-router.config.ts`, and `components.json` as the source of truth for scripts and tooling configuration.
